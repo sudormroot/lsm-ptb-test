@@ -69,6 +69,30 @@ import util
 
 from tensorflow.python.client import device_lib
 
+
+#
+# 
+#
+from tensorflow.python.client import timeline
+
+import os
+
+UNIFIED_MEMORY_SET="no"
+
+env = os.environ
+
+if "UNIFIED_MEMORY_SET" in env:
+    UNIFIED_MEMORY_SET=env["UNIFIED_MEMORY_SET"]
+
+if UNIFIED_MEMORY_SET == "yes":
+    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=2, allow_growth = True)
+else:
+    gpu_options = tf.GPUOptions()
+
+
+
+
+
 flags = tf.flags
 logging = tf.logging
 
@@ -390,6 +414,9 @@ def run_epoch(session, model, eval_op=None, verbose=False):
   start_time = time.time()
   costs = 0.0
   iters = 0
+
+  
+
   state = session.run(model.initial_state)
 
   fetches = {
@@ -405,7 +432,58 @@ def run_epoch(session, model, eval_op=None, verbose=False):
       feed_dict[c] = state[i].c
       feed_dict[h] = state[i].h
 
-    vals = session.run(fetches, feed_dict)
+    
+    if step == 11:
+
+        # trace timeline
+        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+        run_metadata = tf.RunMetadata()
+
+        vals = session.run(fetches, feed_dict #)
+                        ,options=run_options
+                        ,run_metadata=run_metadata)
+
+
+        profile_result="timeline.gpu.step-%d.umem-%s.batchsize-%d.json"%(step, UNIFIED_MEMORY_SET, self.batch_size)
+
+        print("profile_result=",profile_result)
+
+        # Create the Timeline object, and write it to a json
+        tl = timeline.Timeline(run_metadata.step_stats)
+        ctf = tl.generate_chrome_trace_format()
+        with open(profile_result, 'w') as tlf:
+                    tlf.write(ctf)
+
+
+
+        # Print to stdout an analysis of the memory usage and the timing information
+        # broken down by python codes.
+        ProfileOptionBuilder = tf.profiler.ProfileOptionBuilder
+        opts = ProfileOptionBuilder(ProfileOptionBuilder.time_and_memory()) #.with_node_names(show_name_regexes=['.*my_code.py.*']).build()
+
+        #opts["min_bytes"]=0
+        #opts["select"]=()
+
+        #tf.profiler.profile(
+        #    tf.get_default_graph(),
+        #    run_meta=run_metadata,
+        #    cmd='code',
+        #    options=opts
+        #    )
+
+        # Print to stdout an analysis of the memory usage and the timing information
+        # broken down by operation types.
+        tf.profiler.profile(
+                    tf.get_default_graph(),
+                    run_meta=run_metadata,
+                    cmd='op',
+                    options=tf.profiler.ProfileOptionBuilder.time_and_memory())
+
+    else:
+        vals = session.run(fetches, feed_dict)
+
+
+
     cost = vals["cost"]
     state = vals["final_state"]
 
@@ -502,7 +580,10 @@ def main(_):
     for model in models.values():
       model.import_ops()
     sv = tf.train.Supervisor(logdir=FLAGS.save_path)
-    config_proto = tf.ConfigProto(allow_soft_placement=soft_placement)
+    
+    # change by jiaolin
+    config_proto = tf.ConfigProto(allow_soft_placement=soft_placement, gpu_options=gpu_options)
+
     with sv.managed_session(config=config_proto) as session:
       for i in range(config.max_max_epoch):
         lr_decay = config.lr_decay ** max(i + 1 - config.max_epoch, 0.0)

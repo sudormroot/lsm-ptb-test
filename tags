@@ -1,0 +1,153 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BASIC	ptb_word_lm.py	/^BASIC = "basic"$/;"	v
+BLOCK	ptb_word_lm.py	/^BLOCK = "block"$/;"	v
+CUDNN	ptb_word_lm.py	/^CUDNN = "cudnn"$/;"	v
+FLAGS	ptb_word_lm.py	/^FLAGS = flags.FLAGS$/;"	v
+FLAGS	util.py	/^FLAGS = tf.flags.FLAGS$/;"	v
+LargeConfig	ptb_word_lm.py	/^class LargeConfig(object):$/;"	c
+MediumConfig	ptb_word_lm.py	/^class MediumConfig(object):$/;"	c
+PTBInput	ptb_word_lm.py	/^class PTBInput(object):$/;"	c
+PTBModel	ptb_word_lm.py	/^class PTBModel(object):$/;"	c
+PtbReaderTest	reader_test.py	/^class PtbReaderTest(tf.test.TestCase):$/;"	c
+SmallConfig	ptb_word_lm.py	/^class SmallConfig(object):$/;"	c
+TestConfig	ptb_word_lm.py	/^class TestConfig(object):$/;"	c
+UNIFIED_MEMORY_SET	ptb_word_lm.py	/^    UNIFIED_MEMORY_SET=env["UNIFIED_MEMORY_SET"]$/;"	v
+UNIFIED_MEMORY_SET	ptb_word_lm.py	/^UNIFIED_MEMORY_SET="no"$/;"	v
+UpdateCollection	util.py	/^class UpdateCollection(object):$/;"	c
+__init__	ptb_word_lm.py	/^  def __init__(self, config, data, name=None):$/;"	m	class:PTBInput
+__init__	ptb_word_lm.py	/^  def __init__(self, is_training, config, input_):$/;"	m	class:PTBModel
+__init__	util.py	/^  def __init__(self, metagraph, model):$/;"	m	class:UpdateCollection
+_build_rnn_graph	ptb_word_lm.py	/^  def _build_rnn_graph(self, inputs, config, is_training):$/;"	m	class:PTBModel
+_build_rnn_graph_cudnn	ptb_word_lm.py	/^  def _build_rnn_graph_cudnn(self, inputs, config, is_training):$/;"	m	class:PTBModel
+_build_rnn_graph_lstm	ptb_word_lm.py	/^  def _build_rnn_graph_lstm(self, inputs, config, is_training):$/;"	m	class:PTBModel
+_build_vocab	reader.py	/^def _build_vocab(filename):$/;"	f
+_file_to_word_ids	reader.py	/^def _file_to_word_ids(filename, word_to_id):$/;"	f
+_get_lstm_cell	ptb_word_lm.py	/^  def _get_lstm_cell(self, config, is_training):$/;"	m	class:PTBModel
+_read_words	reader.py	/^def _read_words(filename):$/;"	f
+absolute_import	__init__.py	/^from __future__ import absolute_import$/;"	i
+absolute_import	ptb_word_lm.py	/^from __future__ import absolute_import$/;"	i
+absolute_import	reader.py	/^from __future__ import absolute_import$/;"	i
+absolute_import	reader_test.py	/^from __future__ import absolute_import$/;"	i
+absolute_import	util.py	/^from __future__ import absolute_import$/;"	i
+assign_lr	ptb_word_lm.py	/^  def assign_lr(self, session, lr_value):$/;"	m	class:PTBModel
+auto_parallel	util.py	/^def auto_parallel(metagraph, model):$/;"	f
+batch_size	ptb_word_lm.py	/^  batch_size = 20$/;"	v	class:LargeConfig
+batch_size	ptb_word_lm.py	/^  batch_size = 20$/;"	v	class:MediumConfig
+batch_size	ptb_word_lm.py	/^  batch_size = 20$/;"	v	class:SmallConfig
+batch_size	ptb_word_lm.py	/^  batch_size = 20$/;"	v	class:TestConfig
+collections	reader.py	/^import collections$/;"	i
+cost	ptb_word_lm.py	/^  def cost(self):$/;"	m	class:PTBModel
+data_type	ptb_word_lm.py	/^def data_type():$/;"	f
+device_lib	ptb_word_lm.py	/^from tensorflow.python.client import device_lib$/;"	i
+division	__init__.py	/^from __future__ import division$/;"	i
+division	ptb_word_lm.py	/^from __future__ import division$/;"	i
+division	reader.py	/^from __future__ import division$/;"	i
+division	reader_test.py	/^from __future__ import division$/;"	i
+division	util.py	/^from __future__ import division$/;"	i
+env	ptb_word_lm.py	/^env = os.environ$/;"	v
+export_ops	ptb_word_lm.py	/^  def export_ops(self, name):$/;"	m	class:PTBModel
+export_state_tuples	util.py	/^def export_state_tuples(state_tuples, name):$/;"	f
+final_state	ptb_word_lm.py	/^  def final_state(self):$/;"	m	class:PTBModel
+final_state_name	ptb_word_lm.py	/^  def final_state_name(self):$/;"	m	class:PTBModel
+flags	ptb_word_lm.py	/^flags = tf.flags$/;"	v
+get_config	ptb_word_lm.py	/^def get_config():$/;"	f
+gpu_options	ptb_word_lm.py	/^    gpu_options = tf.GPUOptions()$/;"	v
+gpu_options	ptb_word_lm.py	/^    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=2, allow_growth = True)$/;"	v
+hidden_size	ptb_word_lm.py	/^  hidden_size = 1500$/;"	v	class:LargeConfig
+hidden_size	ptb_word_lm.py	/^  hidden_size = 2$/;"	v	class:TestConfig
+hidden_size	ptb_word_lm.py	/^  hidden_size = 200$/;"	v	class:SmallConfig
+hidden_size	ptb_word_lm.py	/^  hidden_size = 650$/;"	v	class:MediumConfig
+import_ops	ptb_word_lm.py	/^  def import_ops(self):$/;"	m	class:PTBModel
+import_state_tuples	util.py	/^def import_state_tuples(state_tuples, name, num_replicas):$/;"	f
+init_scale	ptb_word_lm.py	/^  init_scale = 0.04$/;"	v	class:LargeConfig
+init_scale	ptb_word_lm.py	/^  init_scale = 0.05$/;"	v	class:MediumConfig
+init_scale	ptb_word_lm.py	/^  init_scale = 0.1$/;"	v	class:SmallConfig
+init_scale	ptb_word_lm.py	/^  init_scale = 0.1$/;"	v	class:TestConfig
+initial_state	ptb_word_lm.py	/^  def initial_state(self):$/;"	m	class:PTBModel
+initial_state_name	ptb_word_lm.py	/^  def initial_state_name(self):$/;"	m	class:PTBModel
+input	ptb_word_lm.py	/^  def input(self):$/;"	m	class:PTBModel
+keep_prob	ptb_word_lm.py	/^  keep_prob = 0.35$/;"	v	class:LargeConfig
+keep_prob	ptb_word_lm.py	/^  keep_prob = 0.5$/;"	v	class:MediumConfig
+keep_prob	ptb_word_lm.py	/^  keep_prob = 1.0$/;"	v	class:SmallConfig
+keep_prob	ptb_word_lm.py	/^  keep_prob = 1.0$/;"	v	class:TestConfig
+learning_rate	ptb_word_lm.py	/^  learning_rate = 1.0$/;"	v	class:LargeConfig
+learning_rate	ptb_word_lm.py	/^  learning_rate = 1.0$/;"	v	class:MediumConfig
+learning_rate	ptb_word_lm.py	/^  learning_rate = 1.0$/;"	v	class:SmallConfig
+learning_rate	ptb_word_lm.py	/^  learning_rate = 1.0$/;"	v	class:TestConfig
+logging	ptb_word_lm.py	/^logging = tf.logging$/;"	v
+lr	ptb_word_lm.py	/^  def lr(self):$/;"	m	class:PTBModel
+lr_decay	ptb_word_lm.py	/^  lr_decay = 0.5$/;"	v	class:SmallConfig
+lr_decay	ptb_word_lm.py	/^  lr_decay = 0.5$/;"	v	class:TestConfig
+lr_decay	ptb_word_lm.py	/^  lr_decay = 0.8$/;"	v	class:MediumConfig
+lr_decay	ptb_word_lm.py	/^  lr_decay = 1 \/ 1.15$/;"	v	class:LargeConfig
+main	ptb_word_lm.py	/^def main(_):$/;"	f
+make_cell	ptb_word_lm.py	/^    def make_cell():$/;"	f	function:PTBModel._build_rnn_graph_lstm
+max_epoch	ptb_word_lm.py	/^  max_epoch = 1$/;"	v	class:TestConfig
+max_epoch	ptb_word_lm.py	/^  max_epoch = 14$/;"	v	class:LargeConfig
+max_epoch	ptb_word_lm.py	/^  max_epoch = 4$/;"	v	class:SmallConfig
+max_epoch	ptb_word_lm.py	/^  max_epoch = 6$/;"	v	class:MediumConfig
+max_grad_norm	ptb_word_lm.py	/^  max_grad_norm = 1$/;"	v	class:TestConfig
+max_grad_norm	ptb_word_lm.py	/^  max_grad_norm = 10$/;"	v	class:LargeConfig
+max_grad_norm	ptb_word_lm.py	/^  max_grad_norm = 5$/;"	v	class:MediumConfig
+max_grad_norm	ptb_word_lm.py	/^  max_grad_norm = 5$/;"	v	class:SmallConfig
+max_max_epoch	ptb_word_lm.py	/^  max_max_epoch = 1$/;"	v	class:TestConfig
+max_max_epoch	ptb_word_lm.py	/^  max_max_epoch = 13$/;"	v	class:SmallConfig
+max_max_epoch	ptb_word_lm.py	/^  max_max_epoch = 39$/;"	v	class:MediumConfig
+max_max_epoch	ptb_word_lm.py	/^  max_max_epoch = 55$/;"	v	class:LargeConfig
+np	ptb_word_lm.py	/^import numpy as np$/;"	i
+num_layers	ptb_word_lm.py	/^  num_layers = 1$/;"	v	class:TestConfig
+num_layers	ptb_word_lm.py	/^  num_layers = 2$/;"	v	class:LargeConfig
+num_layers	ptb_word_lm.py	/^  num_layers = 2$/;"	v	class:MediumConfig
+num_layers	ptb_word_lm.py	/^  num_layers = 2$/;"	v	class:SmallConfig
+num_steps	ptb_word_lm.py	/^  num_steps = 2$/;"	v	class:TestConfig
+num_steps	ptb_word_lm.py	/^  num_steps = 20$/;"	v	class:SmallConfig
+num_steps	ptb_word_lm.py	/^  num_steps = 35$/;"	v	class:LargeConfig
+num_steps	ptb_word_lm.py	/^  num_steps = 35$/;"	v	class:MediumConfig
+os	ptb_word_lm.py	/^import os$/;"	i
+os	reader.py	/^import os$/;"	i
+os	reader_test.py	/^import os.path$/;"	i
+path	reader_test.py	/^import os.path$/;"	i
+print_function	__init__.py	/^from __future__ import print_function$/;"	i
+print_function	ptb_word_lm.py	/^from __future__ import print_function$/;"	i
+print_function	reader.py	/^from __future__ import print_function$/;"	i
+print_function	reader_test.py	/^from __future__ import print_function$/;"	i
+print_function	util.py	/^from __future__ import print_function$/;"	i
+ptb_producer	reader.py	/^def ptb_producer(raw_data, batch_size, num_steps, name=None):$/;"	f
+ptb_raw_data	reader.py	/^def ptb_raw_data(data_path=None):$/;"	f
+reader	__init__.py	/^import reader$/;"	i
+reader	ptb_word_lm.py	/^import reader$/;"	i
+reader	reader_test.py	/^import reader$/;"	i
+replicate_states	util.py	/^  def replicate_states(self, state_coll_name):$/;"	m	class:UpdateCollection
+rewriter_config_pb2	util.py	/^from tensorflow.core.protobuf import rewriter_config_pb2$/;"	i
+rnn_mode	ptb_word_lm.py	/^  rnn_mode = BLOCK$/;"	v	class:LargeConfig
+rnn_mode	ptb_word_lm.py	/^  rnn_mode = BLOCK$/;"	v	class:MediumConfig
+rnn_mode	ptb_word_lm.py	/^  rnn_mode = BLOCK$/;"	v	class:SmallConfig
+rnn_mode	ptb_word_lm.py	/^  rnn_mode = BLOCK$/;"	v	class:TestConfig
+run_epoch	ptb_word_lm.py	/^def run_epoch(session, model, eval_op=None, verbose=False):$/;"	f
+setUp	reader_test.py	/^  def setUp(self):$/;"	m	class:PtbReaderTest
+sys	reader.py	/^import sys$/;"	i
+testPtbProducer	reader_test.py	/^  def testPtbProducer(self):$/;"	m	class:PtbReaderTest
+testPtbRawData	reader_test.py	/^  def testPtbRawData(self):$/;"	m	class:PtbReaderTest
+tf	ptb_word_lm.py	/^import tensorflow as tf$/;"	i
+tf	reader.py	/^import tensorflow as tf$/;"	i
+tf	reader_test.py	/^import tensorflow as tf$/;"	i
+tf	util.py	/^import tensorflow as tf$/;"	i
+tf_optimizer	util.py	/^  from tensorflow.python.grappler import tf_optimizer$/;"	i
+time	ptb_word_lm.py	/^import time$/;"	i
+timeline	ptb_word_lm.py	/^from tensorflow.python.client import timeline$/;"	i
+train_op	ptb_word_lm.py	/^  def train_op(self):$/;"	m	class:PTBModel
+update_snapshot_name	util.py	/^  def update_snapshot_name(self, var_coll_name):$/;"	m	class:UpdateCollection
+util	__init__.py	/^import util$/;"	i
+util	ptb_word_lm.py	/^import util$/;"	i
+variable_pb2	util.py	/^from tensorflow.core.framework import variable_pb2$/;"	i
+vocab_size	ptb_word_lm.py	/^  vocab_size = 10000$/;"	v	class:LargeConfig
+vocab_size	ptb_word_lm.py	/^  vocab_size = 10000$/;"	v	class:MediumConfig
+vocab_size	ptb_word_lm.py	/^  vocab_size = 10000$/;"	v	class:SmallConfig
+vocab_size	ptb_word_lm.py	/^  vocab_size = 10000$/;"	v	class:TestConfig
+with_autoparallel_prefix	util.py	/^def with_autoparallel_prefix(replica_id, name):$/;"	f
+with_prefix	util.py	/^def with_prefix(prefix, name):$/;"	f
