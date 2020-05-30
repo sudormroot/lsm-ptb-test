@@ -444,7 +444,7 @@ def run_epoch(session, model, eval_op=None, verbose=False):
                         ,run_metadata=run_metadata)
 
 
-        profile_result="timeline.gpu.step-%d.umem-%s.batchsize-%d.json"%(step, UNIFIED_MEMORY_SET, flags.batch_size)
+        profile_result="timeline.gpu.step-%d.umem-%s.batchsize-%d.json"%(step, UNIFIED_MEMORY_SET, model.input.batch_size)
 
         print("profile_result=",profile_result)
 
